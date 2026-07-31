@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "projectName": "Example Web3 Project",
+    "grant": "Ethereum Public Goods Grant",
+    "status": "Submitted"
+  },
+  {
+    "id": 2,
+    "projectName": "Open Source Community Tool",
+    "grant": "Solana Builder Grant",
+    "status": "Under Review"
+  }
+]
