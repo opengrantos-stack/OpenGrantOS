@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Ethereum Public Goods Grant",
+    "ecosystem": "Ethereum",
+    "category": "Open Source Infrastructure",
+    "description": "Supporting projects that create value for the Web3 ecosystem."
+  },
+  {
+    "id": 2,
+    "title": "Solana Builder Grant",
+    "ecosystem": "Solana",
+    "category": "Developer Tools",
+    "description": "Supporting developers building innovative Web3 solutions."
+  },
+  {
+    "id": 3,
+    "title": "Community Impact Grant",
+    "ecosystem": "Multi-chain",
+    "category": "Public Goods",
+    "description": "Supporting open-source projects with community impact."
+  }
+]
