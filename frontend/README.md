@@ -17,4 +17,4 @@ This folder contains the user interface of OpenGrant OS.
 
 ## Status
 
-Initial development phase. 
+Initial development phase.
