@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>OpenGrant OS - Wallet</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a> |
+<a href="grants.html">Grants</a> |
+<a href="apply.html">Apply</a>
+</nav>
+
+<hr>
+
+<h1>Web3 Wallet</h1>
+
+<p>
+Connect your wallet to access transparent blockchain-based features.
+</p>
+
+<hr>
+
+<p id="wallet-status">
+Wallet not connected.
+</p>
+
+<button onclick="connectWallet()">
+Connect Wallet
+</button>
+
+<script>
+
+function connectWallet(){
+
+document.getElementById("wallet-status").innerHTML =
+"Wallet connected: 0x1234...5678";
+
+}
+
+</script>
+
+</body>
+
+</html>
