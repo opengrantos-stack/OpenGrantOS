@@ -1,0 +1,1 @@
+Assets directory for project images, icons and other static resources.
