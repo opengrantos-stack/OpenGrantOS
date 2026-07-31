@@ -120,7 +120,9 @@ This project is licensed under the MIT License.
 
 # Status
 
-Currently in prototype and research phase, preparing the first MVP release.
+Current Status: MVP prototype completed.
+
+The project is actively under development with ongoing backend implementation, API development and future Web3 integrations.
 
 ---
 
