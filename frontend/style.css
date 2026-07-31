@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input, textarea, select {
+    width: 300px;
+    padding: 8px;
+    margin-top: 5px;
+}
