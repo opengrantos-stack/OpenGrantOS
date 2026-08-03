@@ -57,6 +57,17 @@
 <footer>
 <p>OpenGrantOS • Dashboard MVP</p>
 </footer>
+<script>
+const application = JSON.parse(localStorage.getItem("opengrant_application"));
+
+if (application) {
+    document.getElementById("projectName").textContent = application.project;
+    document.getElementById("status").textContent = application.status;
+    document.getElementById("funding").textContent = application.funding;
+    document.getElementById("blockchain").textContent = application.blockchain;
+    document.getElementById("team").textContent = application.team;
+}
+</script>
 
 </body>
 </html>
