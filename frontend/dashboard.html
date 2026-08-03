@@ -1,85 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenGrantOS - Dashboard</title>
-<link rel="stylesheet" href="style.css">
+    <title>OpenGrant OS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<center>
-<img src="images/1785512841227.jpg" alt="OpenGrantOS Logo" width="140">
-</center>
-
-<nav>
-<a href="index.html">Página Inicial</a> |
-<a href="grants.html">Subvenções</a> |
-<a href="apply.html">Candidatar-se</a> |
-<a href="dashboard.html">Dashboard</a>
-</nav>
+<h1>OpenGrant OS Dashboard</h1>
 
 <hr>
 
-<h1>Dashboard</h1>
+<h2>Wallet Information</h2>
 
-<p>Bem-vindo ao painel do OpenGrantOS.</p>
+<p><strong>Address:</strong> <span id="wallet">Not Connected</span></p>
 
-<h2>Meu Projeto</h2>
+<p><strong>Network:</strong> <span id="network">Unknown</span></p>
 
-<div class="card">
-<h3 id="projectName">Project</h3>
+<p><strong>Balance:</strong> <span id="balance">0 ETH</span></p>
 
-<p><strong>Status:</strong> <span id="status">Under Review</span></p>
-<button onclick="approveApplication()">Approve</button>
-
-<button onclick="rejectApplication()">Reject</button>
-
-<p><strong>Funding Requested:</strong> US$ <span id="funding">0</span></p>
-
-<p><strong>Blockchain:</strong> <span id="blockchain">-</span></p>
-
-<p><strong>Team:</strong> <span id="team">-</span></p>
-</div>
+<button onclick="loadWallet()">
+Refresh Wallet
+</button>
 
 <hr>
 
-<h2>Progresso</h2>
+<a href="index.html">⬅ Home</a>
 
-<p>✅ Candidatura enviada</p>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.min.js"></script>
 
-<p>🟡 Revisão pelos avaliadores</p>
-
-<p>⬜ Aprovação</p>
-
-<p>⬜ Liberação do financiamento</p>
-
-<hr>
-
-<footer>
-<p>OpenGrantOS • Dashboard MVP</p>
-</footer>
 <script>
-const application = JSON.parse(localStorage.getItem("opengrant_application"));
 
-if (application) {
-    document.getElementById("projectName").textContent = application.project;
-    document.getElementById("status").textContent = application.status;
-    document.getElementById("funding").textContent = application.funding;
-    document.getElementById("blockchain").textContent = application.blockchain;
-    document.getElementById("team").textContent = application.team;
-}
-</script>
-<script>
-function approveApplication() {
-    document.getElementById("status").textContent = "Approved";
+async function loadWallet(){
+
+if(typeof window.ethereum==="undefined"){
+alert("MetaMask not found.");
+return;
 }
 
-function rejectApplication() {
-    document.getElementById("status").textContent = "Rejected";
+const provider=new ethers.BrowserProvider(window.ethereum);
+
+const accounts=await provider.send("eth_requestAccounts",[]);
+
+const address=accounts[0];
+
+document.getElementById("wallet").innerHTML=address;
+
+const network=await provider.getNetwork();
+
+document.getElementById("network").innerHTML=network.name;
+
+const balance=await provider.getBalance(address);
+
+document.getElementById("balance").innerHTML=
+ethers.formatEther(balance)+" ETH";
+
 }
+
 </script>
 
 </body>
+
 </html>
