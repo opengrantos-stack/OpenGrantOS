@@ -67,9 +67,34 @@ Increase trust through blockchain-based transparency and community participation
 <p style="text-align:center;">
 OpenGrantOS • Open Source • Web3 • Community Driven
 </p>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.min.js"></script>
+
 <script>
-function connectWallet() {
-    alert("Wallet Connection (Demo)");
+async function connectWallet() {
+
+    if (typeof window.ethereum !== "undefined") {
+
+        try {
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts"
+            });
+
+            const walletAddress = accounts[0];
+
+            alert(
+                "Wallet Connected:\n" + walletAddress
+            );
+
+        } catch (error) {
+            alert("Wallet connection cancelled.");
+        }
+
+    } else {
+        alert(
+            "MetaMask not found. Please install a Web3 wallet."
+        );
+    }
+
 }
 </script>
 
