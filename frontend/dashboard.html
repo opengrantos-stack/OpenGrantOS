@@ -32,6 +32,9 @@
 <h3 id="projectName">Project</h3>
 
 <p><strong>Status:</strong> <span id="status">Under Review</span></p>
+<button onclick="approveApplication()">Approve</button>
+
+<button onclick="rejectApplication()">Reject</button>
 
 <p><strong>Funding Requested:</strong> US$ <span id="funding">0</span></p>
 
@@ -66,6 +69,15 @@ if (application) {
     document.getElementById("funding").textContent = application.funding;
     document.getElementById("blockchain").textContent = application.blockchain;
     document.getElementById("team").textContent = application.team;
+}
+</script>
+<script>
+function approveApplication() {
+    document.getElementById("status").textContent = "Approved";
+}
+
+function rejectApplication() {
+    document.getElementById("status").textContent = "Rejected";
 }
 </script>
 
