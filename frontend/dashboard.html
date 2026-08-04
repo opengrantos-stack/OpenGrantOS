@@ -27,6 +27,15 @@ Refresh Wallet
 </button>
 
 </div>
+<div class="card">
+
+<h2>My Applications</h2>
+
+<div id="applications">
+No applications submitted yet.
+</div>
+
+</div>
 
 <hr>
 
@@ -64,7 +73,48 @@ async function loadWallet() {
     }
 
 }
-window.onload = loadWallet;
+function loadApplications(){
+
+    const applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+    const container =
+        document.getElementById("applications");
+
+    if(applications.length===0){
+        container.innerHTML="No applications submitted yet.";
+        return;
+    }
+
+    let html="";
+
+    applications.forEach(app=>{
+
+        html += `
+        <hr>
+
+        <p><strong>Project:</strong> ${app.project}</p>
+
+        <p><strong>Blockchain:</strong> ${app.blockchain}</p>
+
+        <p><strong>Funding:</strong> ${app.funding}</p>
+
+        <p><strong>Date:</strong> ${app.date}</p>
+
+        `;
+
+    });
+
+    container.innerHTML=html;
+
+}
+window.onload = function(){
+
+    loadWallet();
+
+    loadApplications();
+
+}
 </script>
 
 </body>
