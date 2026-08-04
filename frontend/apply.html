@@ -86,14 +86,23 @@ function submitApplication(event){
     event.preventDefault();
 
     const application = {
-        project: document.getElementById("project").value,
-        description: document.getElementById("description").value,
-        blockchain: document.getElementById("blockchain").value,
-        funding: document.getElementById("funding").value,
-        github: document.getElementById("github").value,
-        website: document.getElementById("website").value,
-        date: new Date().toLocaleString()
-    };
+    project: document.getElementById("project").value,
+    pitch: document.getElementById("pitch").value,
+    description: document.getElementById("description").value,
+    problem: document.getElementById("problem").value,
+    solution: document.getElementById("solution").value,
+    blockchain: document.getElementById("blockchain").value,
+    funding: document.getElementById("funding").value,
+    milestone1: document.getElementById("milestone1").value,
+    milestone2: document.getElementById("milestone2").value,
+    milestone3: document.getElementById("milestone3").value,
+    github: document.getElementById("github").value,
+    website: document.getElementById("website").value,
+    video: document.getElementById("video").value,
+    wallet: document.getElementById("wallet").value,
+    status: "Draft",
+    date: new Date().toLocaleString()
+};
 
     let applications =
         JSON.parse(localStorage.getItem("applications")) || [];
