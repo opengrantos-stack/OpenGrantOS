@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Review Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Review Application</h1>
+
+<nav>
+<a href="index.html">Home</a> |
+<a href="grants.html">Grants</a> |
+<a href="apply.html">Apply</a> |
+<a href="dashboard.html">Dashboard</a>
+</nav>
+
+<div class="card">
+
+<h2>Application Summary</h2>
+
+<div id="review">
+
+Loading...
+
+</div>
+
+<br>
+
+<button onclick="submitGrant()">
+Submit to Grant Program
+</button>
+
+</div>
+
+<div style="text-align:center; margin-top:25px;">
+<a href="apply.html">⬅ Back to Apply</a>
+</div>
+
+<script>
+
+function loadReview(){
+
+const applications =
+JSON.parse(localStorage.getItem("applications")) || [];
+
+if(applications.length===0){
+
+document.getElementById("review").innerHTML=
+"No application found.";
+
+return;
+
+}
+
+const app=applications[applications.length-1];
+
+document.getElementById("review").innerHTML=`
+
+<p><strong>Project:</strong> ${app.project}</p>
+
+<p><strong>Pitch:</strong> ${app.pitch}</p>
+
+<p><strong>Description:</strong> ${app.description}</p>
+
+<p><strong>Problem:</strong> ${app.problem}</p>
+
+<p><strong>Solution:</strong> ${app.solution}</p>
+
+<p><strong>Blockchain:</strong> ${app.blockchain}</p>
+
+<p><strong>Funding:</strong> ${app.funding}</p>
+
+<p><strong>Milestone 1:</strong> ${app.milestone1}</p>
+
+<p><strong>Milestone 2:</strong> ${app.milestone2}</p>
+
+<p><strong>Milestone 3:</strong> ${app.milestone3}</p>
+
+<p><strong>GitHub:</strong> ${app.github}</p>
+
+<p><strong>Website:</strong> ${app.website}</p>
+
+<p><strong>Video:</strong> ${app.video}</p>
+
+<p><strong>Wallet:</strong> ${app.wallet}</p>
+
+<p><strong>Status:</strong> ${app.status}</p>
+
+`;
+
+}
+
+function submitGrant(){
+
+alert("Application submitted successfully! (Demo)");
+
+}
+
+window.onload=loadReview;
+
+</script>
+
+</body>
+
+</html>
