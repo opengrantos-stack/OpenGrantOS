@@ -56,9 +56,31 @@ Submit Application
 <script>
 function submitApplication(event){
 
-event.preventDefault();
+    event.preventDefault();
 
-alert("Application submitted successfully! (Demo)");
+    const application = {
+        project: document.getElementById("project").value,
+        description: document.getElementById("description").value,
+        blockchain: document.getElementById("blockchain").value,
+        funding: document.getElementById("funding").value,
+        github: document.getElementById("github").value,
+        website: document.getElementById("website").value,
+        date: new Date().toLocaleString()
+    };
+
+    let applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+    applications.push(application);
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+    alert("Application saved successfully!");
+
+    document.querySelector("form").reset();
 
 }
 </script>
