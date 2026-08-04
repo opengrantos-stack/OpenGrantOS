@@ -95,7 +95,24 @@ document.getElementById("review").innerHTML=`
 
 function submitGrant(){
 
-alert("Application submitted successfully! (Demo)");
+    let applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+    if(applications.length===0){
+        alert("No application found.");
+        return;
+    }
+
+    applications[applications.length-1].status = "Submitted";
+
+    localStorage.setItem(
+        "applications",
+        JSON.stringify(applications)
+    );
+
+    alert("Application submitted successfully!");
+
+    window.location.href = "dashboard.html";
 
 }
 
