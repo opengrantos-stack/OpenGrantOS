@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="style.css">
-<title>OpenGrantOS - Apply</title>
+    <title>Apply for Funding</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<img src="images/1785512841227.jpg" alt="OpenGrant OS Logo" width="180">
+<h1>Apply for Funding</h1>
 
 <nav>
 <a href="index.html">Home</a> |
@@ -16,60 +17,29 @@
 <a href="dashboard.html">Dashboard</a>
 </nav>
 
-<hr>
-
-<h1>Apply for Funding</h1>
-
-<p>
-Complete the form below to submit your project for funding.
-</p>
+<div class="card">
 
 <form onsubmit="submitApplication(event)">
 
-<p>
-<b>Project Name</b><br>
-<input type="text" placeholder="Enter your project name">
-</p>
+<p><strong>Project Name</strong></p>
+<input type="text" id="project" required>
 
-<p>
-<b>Team Name</b><br>
-<input type="text" placeholder="Your team">
-</p>
+<p><strong>Project Description</strong></p>
+<textarea id="description" rows="6" required></textarea>
 
-<p>
-<b>Blockchain</b><br>
-<input type="text" placeholder="Ethereum, Solana, Base...">
-</p>
+<p><strong>Blockchain</strong></p>
+<input type="text" id="blockchain" placeholder="Ethereum, Base, Polygon..." required>
 
-<p>
-<b>Category</b><br>
-<input type="text" placeholder="DeFi, Education, AI...">
-</p>
+<p><strong>Funding Requested</strong></p>
+<input type="text" id="funding" placeholder="10 ETH ou 5000 USDC" required>
 
-<p>
-<b>Funding Requested (USD)</b><br>
-<input type="number" placeholder="5000">
-</p>
+<p><strong>GitHub Repository</strong></p>
+<input type="url" id="github">
 
-<p>
-<b>Wallet Address</b><br>
-<input type="text" placeholder="0x...">
-</p>
+<p><strong>Website</strong></p>
+<input type="url" id="website">
 
-<p>
-<b>GitHub Repository</b><br>
-<input type="url" placeholder="https://github.com/...">
-</p>
-
-<p>
-<b>Website</b><br>
-<input type="url" placeholder="https://">
-</p>
-
-<p>
-<b>Project Description</b><br>
-<textarea rows="6" cols="40" placeholder="Describe your project"></textarea>
-</p>
+<br><br>
 
 <button type="submit">
 Submit Application
@@ -77,12 +47,22 @@ Submit Application
 
 </form>
 
-<hr>
+</div>
 
-<p style="text-align:center;">
-OpenGrantOS • Funding Application Portal
-</p>
-<script src="script.js"></script>
+<div style="text-align:center; margin-top:25px;">
+<a href="grants.html">⬅ Back to Grants</a>
+</div>
+
+<script>
+function submitApplication(event){
+
+event.preventDefault();
+
+alert("Application submitted successfully! (Demo)");
+
+}
+</script>
 
 </body>
+
 </html>
