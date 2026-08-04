@@ -28,36 +28,36 @@ Refresh Wallet
 
 <a href="index.html">⬅ Home</a>
 
-<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.min.js"></script>
-
 <script>
+async function loadWallet() {
 
-async function loadWallet(){
+    if (!window.ethereum) {
+        alert("MetaMask not found.");
+        return;
+    }
 
-if(typeof window.ethereum==="undefined"){
-alert("MetaMask not found.");
-return;
+    try {
+
+        const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts"
+        });
+
+        document.getElementById("wallet").textContent = accounts[0];
+
+        const chainId = await window.ethereum.request({
+            method: "eth_chainId"
+        });
+
+        document.getElementById("network").textContent = chainId;
+
+        document.getElementById("balance").textContent =
+            "Coming Soon";
+
+    } catch (err) {
+        alert("Error: " + err.message);
+    }
+
 }
-
-const provider=new ethers.BrowserProvider(window.ethereum);
-
-const accounts=await provider.send("eth_requestAccounts",[]);
-
-const address=accounts[0];
-
-document.getElementById("wallet").innerHTML=address;
-
-const network=await provider.getNetwork();
-
-document.getElementById("network").innerHTML=network.name;
-
-const balance=await provider.getBalance(address);
-
-document.getElementById("balance").innerHTML=
-ethers.formatEther(balance)+" ETH";
-
-}
-
 </script>
 
 </body>
