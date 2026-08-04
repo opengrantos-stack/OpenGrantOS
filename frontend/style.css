@@ -1,95 +1,87 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #222;
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#222;
 }
 
-nav {
-    background: #0d47a1;
-    padding: 15px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #4fc3f7;
-}
-
-img {
-    display: block;
-    margin: 30px auto 10px;
-    border-radius: 12px;
-}
-
-h1 {
-    text-align: center;
-    color: #0d47a1;
-    font-size: 40px;
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-}
-
-h3 {
-    color: #0d47a1;
-}
-
-p {
-    max-width: 900px;
-    margin: auto;
-    line-height: 1.8;
-    padding: 10px 20px;
-}
-
-button {
-    background: #1565c0;
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-button:hover {
-    background: #1976d2;
-}
-
-a {
-    text-decoration: none;
-}
-
-hr {
-    margin: 30px 0;
-}
-
-.wallet{
+h1{
     text-align:center;
-    margin:15px;
+    color:#0d47a1;
+    margin-top:30px;
 }
 
-.wallet-btn{
-    background:#6c63ff;
+h2{
+    color:#0d47a1;
+}
+
+nav{
+    background:#0d47a1;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
     color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
+    text-decoration:none;
+    margin:15px;
     font-weight:bold;
 }
 
+nav a:hover{
+    color:#90caf9;
+}
+
+.wallet{
+    text-align:right;
+    padding:20px;
+}
+
+.wallet-btn{
+    background:#f6851b;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
 .wallet-btn:hover{
-    background:#564fd8;
+    background:#dd6f00;
+}
+
+button{
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+.card{
+    background:white;
+    width:90%;
+    max-width:900px;
+    margin:25px auto;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+
+.footer{
+    text-align:center;
+    margin:40px;
+    color:#777;
+}
+
+img{
+    display:block;
+    margin:auto;
 }
