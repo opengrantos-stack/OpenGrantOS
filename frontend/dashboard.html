@@ -108,13 +108,19 @@ function loadApplications(){
     container.innerHTML=html;
 
 }
-window.onload = function(){
-
-    loadWallet();
+window.addEventListener("load", async function () {
 
     loadApplications();
 
-}
+    if (window.ethereum) {
+        try {
+            await loadWallet();
+        } catch (e) {
+            console.log("Wallet not connected automatically.");
+        }
+    }
+
+});
 </script>
 
 </body>
