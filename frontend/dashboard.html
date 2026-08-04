@@ -12,21 +12,27 @@
 
 <hr>
 
+<div class="card">
+
 <h2>Wallet Information</h2>
 
 <p><strong>Address:</strong> <span id="wallet">Not Connected</span></p>
 
 <p><strong>Network:</strong> <span id="network">Unknown</span></p>
 
-<p><strong>Balance:</strong> <span id="balance">0 ETH</span></p>
+<p><strong>Balance:</strong> <span id="balance">Coming Soon</span></p>
 
 <button onclick="loadWallet()">
 Refresh Wallet
 </button>
 
+</div>
+
 <hr>
 
-<a href="index.html">⬅ Home</a>
+<div style="text-align:center; margin-top:20px;">
+    <a href="index.html">⬅ Home</a>
+</div>
 
 <script>
 async function loadWallet() {
@@ -58,6 +64,7 @@ async function loadWallet() {
     }
 
 }
+window.onload = loadWallet;
 </script>
 
 </body>
